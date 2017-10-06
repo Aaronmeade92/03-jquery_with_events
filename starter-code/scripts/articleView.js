@@ -61,15 +61,15 @@ $('#category-filter').on('change', function(){
     if ($(this).val()) {
       $('article').hide();
       $('article[data-category="' + $(this).val() + '"]').fadeIn();
-       $('article[data-author="' + $(this).val() + '"]').fadeIn();
-    }
-    else {
-      $('article').fadeIn();
-      $('article.template').hide();
-    }
-    $('#author-filter').val('');
-})
-};
+           }
+           else {
+            $('article').not('.template').show()
+          }
+
+          $('#author-filter').val('');
+        });
+
+      };
 
 articleView.handleMainNav = function() {
   // TODO: Add an event handler to .main-nav elements that will power the Tabs feature.
